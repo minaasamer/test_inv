@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>B&V Wedding</title>
+
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="style.css" />
+  <!-- EmailJS -->
+</head>
+
+<body>
+<div id="intro">
+  <div class="intro-left"></div>
+  <img src="center.png" class="intro-logo" />
+  <div class="intro-right"></div>
+</div>
+<section class="hero">
+  <img src="hero.jpg" alt="" class="hero-bg">
+  <div class="overlay"></div>
+  <div class="floating-light"></div>
+  <div class="floating-light"></div>
+  <div class="hero-content">
+    <p>My husband's wedding invitation</p>
+    <h1>Beshoy & Veronia</h1>
+    <a href="#about" class="btn">Discover More</a>
+  </div>
+</section>
+<section class="about" id="about">
+  <h2 class="section-title">We are so excited to see you</h2>
+  <p class="section-text">
+    Our next chapter starts with all of you beside us.
+  </p>
+  <div class="gallery">
+    <img src="New folder/1.jpg">
+    <img src="New folder/2.jpg">
+    <img src="New folder/3.jpg">
+    <img src="New folder/4.jpg">
+  </div>
+</section>
+<section class="countdown-section">
+  <div class="overlay"></div>
+  <div class="glass-box">
+    <h2 class="section-title">The Countdown</h2>
+    <div class="countdown">
+      <div class="time-box">
+        <h2 id="days">00</h2>
+        <span>Days</span>
+      </div>
+      <div class="time-box">
+        <h2 id="hours">00</h2>
+        <span>Hours</span>
+      </div>
+
+      <div class="time-box">
+        <h2 id="minutes">00</h2>
+        <span>Minutes</span>
+      </div>
+
+      <div class="time-box">
+        <h2 id="seconds">00</h2>
+        <span>Seconds</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEW SECTION AFTER COUNTDOWN -->
+<section class="about">
+  <h2 class="section-title">Ceremony & Reception Hall</h2>
+  <p class="section-text-about">Join us in these special moments.</p>
+
+  <div class="location-cards">
+
+    <div class="location-card">
+
+  <i class="fa-solid fa-church location-icon"></i>
+
+  <h3>St. Mark Church</h3>
+  <h4>كنيسة الملاك ميخائيل - شيراتون</h4>
+
+  <p class="location-time">
+    Ceremony • 6:00 - 7:00 PM
+  </p>
+
+  <a class="location-btn"
+     href="https://maps.google.com/?q=Church of Archangel Michael in Sheraton"
+     target="_blank">
+
+     <i class="fa-solid fa-location-dot"></i>
+     View Location
+
+  </a>
+
+</div>
+
+
+<div class="location-card">
+
+  <i class="fa-solid fa-building-columns location-icon"></i>
+
+  <h3>Al Bansia Hall</h3>
+  <h4>قاعة البانسية - دار جاردينيا</h4>
+
+  <p class="location-time">
+    Reception Hall • 8:00 - 12:00 PM
+  </p>
+
+  <a class="location-btn"
+     href="https://maps.google.com/?q=قاعات حفلات دار جاردينيا"
+     target="_blank">
+
+     <i class="fa-solid fa-location-dot"></i>
+     View Location
+
+  </a>
+
+</div>
+
+  </div>
+</section>
+<section class="message-box">
+
+  <h2 class="section-title">Leave a Message</h2>
+
+  <p class="section-text">
+    Write your wishes for the bride & groom
+  </p>
+
+  <input 
+    id="guestName"
+    type="text"
+    placeholder="Your Name">
+
+  <textarea 
+    id="guestMessage" 
+    placeholder="Type your message here..."></textarea>
+
+
+  <button class="btn" onclick="sendWish()">
+    Send Your Message
+  </button>
+
+  <div id="comments"></div>
+<button id="toggleComments" class="btn" style="display:none; margin-top:20px;">
+  See More
+</button>
+  <p id="status"></p>
+
+</section>
+<section class="footer">
+  <h2 class="section-title">Save The Date</h2>
+  <p class="section-text">
+    Tuesday, September 08 • Cairo, Egypt
+  </p>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="module" src="firebase.js"></script>
+<script src="java.js"></script>
+
+</body>
+</html>

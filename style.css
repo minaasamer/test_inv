@@ -1,0 +1,658 @@
+*{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Montserrat',sans-serif;
+      background:#050505;
+      color:white;
+      overflow-x:hidden;
+    }
+    section{
+      min-height:100vh;
+      position:relative;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:40px;
+    }
+
+.hero{
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-bg{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  transition: transform .3s ease;
+}
+
+.overlay{
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.55);
+  backdrop-filter: blur(2px);
+  z-index: 1;
+}
+
+.floating-light{
+  z-index: 2;
+}
+
+.hero-content{
+  position: relative;
+  z-index: 3;
+}
+
+@media (max-width:768px){
+  .hero-bg{
+   object-fit: cover;
+    object-position: 60% center;
+    
+  }
+}
+    @keyframes float{
+      0%,100%{
+        transform:translateY(0px) scale(1);
+      }
+
+      50%{
+        transform:translateY(-30px) scale(1.1);
+      }
+    }
+
+    .hero-content{
+      position:relative;
+      z-index:2;
+      text-align:center;
+      max-width:900px;
+      animation:fadeUp 1.5s ease forwards;
+      opacity:0;
+      transform:translateY(40px);
+    }
+
+    @keyframes fadeUp{
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    .hero h1{
+        font-family:'Great Vibes', cursive;
+        font-size:6rem;
+        font-weight:400;
+        color:#F6E7A1;
+        letter-spacing:2px;
+    }
+
+    .hero p{
+      font-size:1.2rem;
+      letter-spacing:3px;
+      text-transform:uppercase;
+      opacity:.8;
+      margin-bottom:40px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:16px 40px;
+      border:1px solid rgba(255,255,255,.4);
+      text-decoration:none;
+      color:white;
+      border-radius:50px;
+      backdrop-filter:blur(10px);
+      background:rgba(255,255,255,.08);
+      transition:.4s;
+      overflow:hidden;
+      position:relative;
+      margin-top:5px;
+    }
+
+    .btn::before{
+      content:'';
+      position:absolute;
+      width:100%;
+      height:100%;
+      top:0;
+      left:-100%;
+      background:rgba(255,255,255,.15);
+      transition:.5s;
+    }
+
+    .btn:hover::before{
+      left:100%;
+    }
+
+    .btn:hover{
+      transform:translateY(-5px);
+      background:white;
+      color:black;
+    }
+
+    .about{
+      background:#0b0b0b;
+      flex-direction:column;
+      text-align:center;
+    }
+
+    .section-title{
+    font-family:'Cormorant Garamond', serif;
+    font-size:4rem;
+    font-weight:600;
+    color:#F6E7A1;
+}
+
+    .section-text{
+      max-width:700px;
+      line-height:2;
+      opacity:.8;
+      margin-bottom:50px;
+    }
+
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+      width:100%;
+      max-width:1200px;
+    }
+
+.gallery img{
+  width:100%;
+  height:420px;
+  object-fit:cover;
+  border-radius:20px;
+
+  /* البرواز الذهبي */
+  border:6px solid #D4AF37;
+  padding:6px;
+  background:#fff;
+
+  box-shadow:
+      0 0 0 2px #f8e7a1,
+      0 12px 25px rgba(0,0,0,.35),
+      inset 0 0 12px rgba(255,215,0,.35);
+
+  transition:.5s;
+  cursor:pointer;
+}
+
+.gallery img:hover{
+  transform:scale(1.04);
+  border-color:#FFD700;
+  box-shadow:
+      0 0 0 2px #fff2b3,
+      0 20px 40px rgba(212,175,55,.45);
+}
+
+    .gallery img:hover{
+      transform:scale(1.04);
+      filter:brightness(1.1);
+    }
+
+    .countdown-section{
+      background:url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1974&auto=format&fit=crop') center/cover fixed;
+    }
+
+    .glass-box{
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.15);
+      backdrop-filter:blur(20px);
+      padding:60px;
+      border-radius:35px;
+      text-align:center;
+      width:100%;
+      max-width:900px;
+      z-index:2;
+    }
+
+    .countdown{
+      display:flex;
+      justify-content:center;
+      gap:25px;
+      flex-wrap:wrap;
+      margin-top:40px;
+    }
+
+    .time-box{
+      width:140px;
+      height:140px;
+      border-radius:30px;
+      background:rgba(255,255,255,.08);
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      border:1px solid rgba(255,255,255,.15);
+      transition:.4s;
+    }
+
+    .time-box:hover{
+      transform:translateY(-10px);
+    }
+
+    .time-box h2{
+      font-size:3rem;
+      font-family:'Cormorant Garamond',serif;
+    }
+
+    .time-box span{
+      opacity:.7;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      font-size:.8rem;
+    }
+.location-icon{
+  font-size:45px;
+  margin-bottom:20px;
+  color:#c9a35b;
+}
+
+.location-btn i{
+  margin-right:8px;
+}
+    .location-cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:30px;
+      width:100%;
+      max-width:1000px;
+      margin-top:40px;
+    }
+
+    .location-card{
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.15);
+      backdrop-filter:blur(20px);
+      border-radius:30px;
+      padding:35px;
+      text-align:center;
+      transition:.4s;
+    }
+
+    .location-card:hover{
+      transform:translateY(-8px);
+    }
+
+    .location-card h3{
+      font-family:'Cormorant Garamond',serif;
+      font-size:2rem;
+      margin-bottom:15px;
+    }
+
+    .location-time{
+      opacity:.75;
+      margin-bottom:25px;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      font-size:.9rem;
+    }
+
+    .location-btn{
+      display:inline-block;
+      padding:14px 30px;
+      border-radius:50px;
+      text-decoration:none;
+      color:white;
+      border:1px solid rgba(255,255,255,.2);
+      background:rgba(255,255,255,.06);
+      transition:.4s;
+    }
+
+    .location-btn:hover{
+      background:white;
+      color:black;
+    }
+
+    .footer{
+      background:#050505;
+      flex-direction:column;
+      text-align:center;
+      min-height:60vh;
+    }
+.message-box{
+  background-image: url("./New folder/3.jpg");
+  padding:80px 40px;
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  position:relative;
+  overflow:hidden;
+  background-size: cover;
+  margin-top: 50px;
+}
+.message-box::before{
+  content:'';
+  position:absolute;
+  width:100%;
+  height:100%;
+  background: rgba(0,0,0,0.65);
+}
+.message-box *{
+  position:relative;
+  z-index:1;
+}
+
+.message-box textarea{
+  width:100%;
+  max-width:700px;
+  min-height:180px;
+  background:rgba(255,255,255,.15);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:25px;
+  padding:25px;
+  color:white;
+  resize:none;
+  outline:none;
+  font-size:1rem;
+  margin-top:30px;
+}
+.message-box textarea::placeholder{
+  color: rgba(255,255,255,0.8);
+}
+#status{
+  margin-top:15px;
+  opacity:.8;
+}
+/* ================= INTRO ================= */
+
+#intro{
+  position:fixed;
+  inset:0;
+  display:flex;
+  z-index:9999;
+  overflow:hidden;
+  transition:2s ease;
+}
+
+/* الصور */
+.intro-left,
+.intro-right{
+  width:50%;
+  height:100vh;
+  background-size:cover;
+  background-position:center;
+  transition:2s ease;
+}
+
+.intro-left{
+  background-image:url("./left.jpeg");
+  box-shadow: -15px 0 60px rgba(0,0,0,0.65);
+}
+
+.intro-right{
+  background-image:url("./right.jpeg");
+  box-shadow: 15px 0 60px rgba(0,0,0,0.65);
+
+}
+
+/* ظل في النص */
+/* #intro::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:0;
+  transform:translateX(-50%);
+  width:90px;
+  height:100%;
+  background:radial-gradient(circle, rgba(0,0,0,0.6), transparent 70%);
+  z-index:2;
+} */
+
+/* ================= LOGO ================= */
+
+.intro-logo{
+  position:absolute;
+  top:45%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:120px;
+  z-index:3;
+  transition:2.5s ease;
+  filter:drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+}
+
+/* ================= ANIMATION ================= */
+
+/* فتح الستارة */
+#intro.hide .intro-left{
+  transform:translateX(-100%);
+}
+
+#intro.hide .intro-right{
+  transform:translateX(100%);
+}
+
+/* اللوجو يمشي مع اليمين */
+#intro.hide .intro-logo{
+  transform:translate(160%, -50%) scale(0.8);
+  opacity:0;
+}
+
+/* أثناء الفتح نخليها أخف */
+#intro.hide{
+  background:rgba(0,0,0,0.15);
+  pointer-events:none;
+}
+
+/* ================= REVEAL EFFECT ================= */
+
+/* الموقع يظهر تدريجي تحت الستارة */
+body{
+  overflow:hidden;
+  /* animation:revealBody 2.5s ease forwards; */
+  animation: 2.5s ease forwards;
+
+}
+.message-box input{
+  width:100%;
+  max-width:700px;
+  height:60px;
+  background:rgba(255,255,255,.15);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:25px;
+  padding:0 25px;
+  color:white;
+  outline:none;
+  font-size:1rem;
+  margin-top:20px;
+}
+
+.message-box input::placeholder{
+  color:rgba(255,255,255,.8);
+}
+/* ================= COMMENTS ================= */
+
+#comments{
+  width:100%;
+  max-width:700px;
+  margin-top:35px;
+}
+
+.comment-card{
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.12);
+  backdrop-filter:blur(12px);
+  border-radius:18px;
+  padding:12px 20px;
+  margin-bottom:14px;
+  text-align:left;
+  transition:.3s;
+}
+
+.comment-card:hover{
+  transform:translateY(-3px);
+  border-color:#D4AF37;
+}
+
+.comment-card h3{
+  font-family:'Cormorant Garamond', serif;
+  color:#F6E7A1;
+  font-size:1.5rem;
+  margin:0 0 6px;
+}
+
+.comment-card p{
+  margin:0;
+  color:#fff;
+  opacity:.9;
+  font-size:.95rem;
+  line-height:1.5;
+  word-break:break-word;
+}
+/* ================= MOBILE RESPONSIVE (FLUID) ================= */
+
+@media (max-width:768px){
+
+  section{
+    padding: clamp(10px, 4vw, 20px);
+  }
+
+  /* HERO */
+
+  .hero h1{
+    font-size: clamp(2.8rem, 17.92vw, 4.4rem);
+    line-height:1.1;
+    margin-bottom: clamp(30px, 13.33vw, 60px);
+  }
+
+  .hero p{
+    font-size: clamp(0.85rem, 4.27vw, 1.1rem);
+    letter-spacing:2px;
+  }
+  .btn{
+    padding: clamp(12px, 3.73vw, 18px) clamp(20px, 8vw, 36px);
+    font-size: clamp(0.8rem, 3.84vw, 1rem);
+  }
+
+  /* TITLES */
+
+  .section-title{
+    font-size: clamp(1.8rem, 10.67vw, 3rem);
+    line-height:0.85;
+    margin: clamp(10px, 4.53vw, 25px) 0px clamp(12px, 5.33vw, 28px) 0;
+  }
+
+  .section-text{
+    font-size: clamp(0.85rem, 4.22vw, 1.05rem);
+    line-height:1.8;
+    margin-bottom: clamp(14px, 5.33vw, 26px);
+  }
+
+  /* GALLERY */
+
+ .gallery{
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(10px, 4vw, 20px);
+}
+
+.gallery img{
+  width:100%;
+  aspect-ratio:1/1;
+  height:auto;
+  object-fit:cover;
+  border-radius: clamp(12px, 4vw, 20px);
+}
+
+  /* COUNTDOWN */
+
+  .countdown{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap: clamp(12px, 4.8vw, 24px);
+    justify-content:center;
+  }
+
+  .time-box{
+    width:100%;
+    height: clamp(90px, 32vw, 140px);
+  }
+
+  .time-box h2{
+    font-size: clamp(1.6rem, 9.81vw, 2.6rem);
+  }
+
+  /* GLASS BOX */
+
+  .glass-box{
+    padding: clamp(20px, 9.33vw, 45px) clamp(14px, 5.33vw, 28px);
+    border-radius: clamp(18px, 6vw, 30px);
+  }
+
+  /* LOCATION CARDS */
+.section-text-about{
+    font-size: clamp(0.85rem, 4.22vw, 1.05rem);
+    line-height:1.8;
+    margin-bottom: -10px;
+}
+  .location-cards{
+    grid-template-columns:1fr;
+  }
+
+  .location-card{
+    padding: clamp(18px, 7.47vw, 35px) clamp(10px, 4vw, 20px);
+    margin-bottom:-15px;
+  }
+
+  .location-card h3{
+    font-size: clamp(1.4rem, 7.68vw, 2rem);
+    margin-bottom:0px;
+  }
+  .location-card h4{
+    font-family:'Cormorant Garamond',serif;
+    line-height:1.8;
+    margin-bottom: 10px;
+    color:#F6E7A1;
+  }
+
+  /* MESSAGE BOX */
+
+  .message-box{
+    padding: clamp(35px, 16vw, 80px) clamp(14px, 5.33vw, 40px);
+    background-position: 60% center;
+  }
+
+  .message-box textarea{
+    min-height: clamp(140px, 42vw, 180px);
+    padding: clamp(14px, 5.33vw, 25px);
+    font-size: clamp(0.85rem, 4.05vw, 1rem);
+  }
+
+  /* FOOTER */
+
+  .footer{
+    min-height:0vh;
+  }
+
+  /* INTRO LOGO */
+
+  .intro-logo{
+    width: clamp(65px, 22.67vw, 120px);
+  }
+
+}
+
+@keyframes revealBody{
+  0%{
+    filter:blur(10px);
+    transform:scale(1.05);
+  }
+  100%{
+    filter:blur(0px);
+    transform:scale(1);
+  }
+}
